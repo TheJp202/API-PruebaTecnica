@@ -1,7 +1,11 @@
 from django.urls import path
-from .views import EmpleadoLC_APIView,EmpleadoRUD_APIView
+from .views import EmpleadoL_APIView,RegisterAPIView,LoginAPIView
+from django.views.decorators.csrf import csrf_exempt
+
 
 urlpatterns = [
-    path('list_create/',EmpleadoLC_APIView.as_view(),name='crear_listar_empleado'),
-    path('update_delete/<int:pk>',EmpleadoRUD_APIView.as_view(),name='eliminar_actualizar_empleado')
+    path('list/',EmpleadoL_APIView.as_view(),name='listar_empleado'),
+    path('register/', csrf_exempt(RegisterAPIView.as_view()), name='register'),
+    path('login/', csrf_exempt(LoginAPIView.as_view()), name='login'),
+
 ]
