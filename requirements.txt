@@ -1,0 +1,11 @@
+Django
+djangorestframework
+django-environ
+django-model-utils
+django-storages[azure]
+pillow
+whitenoise
+django-cors-headers
+gunicorn
+psycopg2
+
