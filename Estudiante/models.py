@@ -7,8 +7,8 @@ class Estudiante(models.Model):
     Telefono = models.CharField(max_length=9)
     Correo = models.CharField(max_length=50)
     Contraseña = models.CharField()
-    FechaAdmision = models.DateField()
-    Semestre = models.CharField(max_length=2)
+    FechaAdmision = models.DateField(auto_now_add=True)
+    Semestre = models.CharField(max_length=2,blank=True)
     def __str__(self):
         return self.DNI
         
